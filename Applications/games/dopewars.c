@@ -268,7 +268,7 @@ unsigned quantity_cash(money *n, const char *op)
 			}
 		}
 		sum += cents;
-	}	
+	}
 	*n = sum;
 	return 1;
 }
@@ -475,7 +475,7 @@ void police(void)
 			info(COPS_TAKE_ALL);
 		else
 			info(COPS_TAKE_HALF);
-		if (gun) { 
+		if (gun) {
 			info(COP_NO_GUN);
 			gun = 0;
 		}
@@ -620,7 +620,7 @@ void banker(void)
 				cash += n;
 			}
 			continue;
-			
+
 		}
 	}
 }
@@ -770,6 +770,6 @@ int main(int argc, char *argv[])
 			printf("Congratulations! You didn't do half bad.\n");
 		else
 			printf("You didn't make much money. Better luck next time.\n");
-	} 
+	}
 	return 0;
 }

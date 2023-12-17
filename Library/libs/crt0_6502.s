@@ -172,9 +172,13 @@ stash_loop:
 	.macpack	cpu
 
 callax:
-	sta     jmpvec+1
-        stx     jmpvec+2
-        jmp     (jmpvec+1)         ; jump there
+;     sta     jmpvec+1
+;     stx     jmpvec+2
+;     jmp     (jmpvec+1)         ; jump there
+        sta     jmpvec_+1
+        stx     jmpvec_+2
+jmpvec_:
+        jmp     $f00d         ; jump there
 
 
 

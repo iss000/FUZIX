@@ -34,7 +34,7 @@ tcflag_t termios_mask[NUM_DEV_TTY + 1] = {
 /* tty1 is the screen tty2+ are the serial ports */
 
 /* Output for the system console (kprintf etc) */
-void kputchar(char c)
+void kputchar(unsigned char c)
 {
 	if (c == '\n')
 		tty_putc(1, '\r');
@@ -75,7 +75,7 @@ void tty_data_consumed(uint_fast8_t minor)
 void tty_poll(void)
 {
         uint8_t x;
-        
+
         x = *kbd_read;
         if (x & 0x80) {
 		tty_inproc(1, x & 0x7F);
@@ -115,7 +115,7 @@ static uint8_t *vtmap[24] = {
 	(uint8_t *)0x680,
 	(uint8_t *)0x700,
 	(uint8_t *)0x780,
-	
+
 	(uint8_t *)0x428,
 	(uint8_t *)0x4A8,
 	(uint8_t *)0x528,
@@ -124,7 +124,7 @@ static uint8_t *vtmap[24] = {
 	(uint8_t *)0x6A8,
 	(uint8_t *)0x728,
 	(uint8_t *)0x7A8,
-	
+
 	(uint8_t *)0x450,
 	(uint8_t *)0x4D0,
 	(uint8_t *)0x550,
